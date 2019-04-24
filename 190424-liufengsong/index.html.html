@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //			1、var a=[2,4,{x:2,y:3},true,[5,6]];     ---用every()方法实现判断a中的元素是否全为数字类型
+
+        var a = [2, 4, { x: 2, y: 3 }, true, [5, 6]];
+        function song(value) {
+            return value.constructor === Number
+        }
+        console.log(a.every(song));
+
+
+        //			2、检测数组var num=[1,6,3,9]中元素的值是否在2-10之间（若num中有非数字返回false）
+
+        var num = [1, 6, 3, 9];
+        console.log(num.every(function (value) {
+            return value >= 2 && value <= 10
+        }));
+
+
+
+        //			3、var b=[2,4,{x:2,y:3},true,[5,6]];      ---用some()方法实现判断a中的元素是否全为数字类型
+
+        var b = [2, 4, { x: 2, y: 3 }, true, [5, 6]];
+        console.log(!b.some(function (value) {
+            return value.constructor !== Number
+        }))
+
+
+
+
+
+    </script>
+</body>
+
+</html>
